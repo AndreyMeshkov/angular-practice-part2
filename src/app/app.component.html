@@ -1,5 +1,12 @@
-<h1>Hello Angular World!</h1>
+<div class="container">
+  <h1>Angular Components</h1>
 
-<p>
-  {{now | date:'long' | uppercase | lowercase}}
-</p>
+  <app-post-form></app-post-form>
+
+  <hr />
+
+  <app-post
+    *ngFor="let post of posts"
+  ></app-post>
+
+</div>
