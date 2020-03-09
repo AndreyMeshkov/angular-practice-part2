@@ -15,11 +15,14 @@ export class AppComponent {
   posts: Post[] = [
     {title: 'Хочу выучить Angular компоненты', text: 'Я все еще учу компоненты', id: 1},
     {title: 'Следующий блок', text: 'Будет про директивы и еще про пайпы', id: 2}
-
   ];
 
   updatePosts(post: Post) {
     this.posts.unshift(post);
     // console.log('Post', post);
+  }
+
+  removePost(id: number) {
+    this.posts = this.posts.filter(p => p.id !== id);
   }
 }
