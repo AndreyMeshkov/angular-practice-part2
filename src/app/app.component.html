@@ -1,33 +1,37 @@
 <div class="container">
-  <h1>Angular Components</h1>
+  <h1>Angular Pipes</h1>
 
-  <p [appStyle]="'red'" [dStyles]="{border: '1px solid blue', borderRadius: '5px'}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, rerum?
+  <p>
+    {{ e | number:'1.1-5'}}
   </p>
 
-  <p [appStyle]="'blue'" [dStyles]="{border: '1px solid red', borderRadius: '15px'}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, rerum?
+  <p>
+    {{ e | number:'3.1-2'}}
   </p>
 
-  <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
+  <p>
+    {{ e | number:'1.0-0'}}
+  </p>
 
-<!--  <div *ngIf="isVisible" class="wrap">-->
-<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eum id laboriosam maiores officiis, omnis quasi quidem rerum sunt veritatis!</p>-->
-<!--  </div>-->
+  <p> {{ str | uppercase | lowercase | titlecase}}</p>
 
-<!--  <ng-template [ngIf]="isVisible" >-->
-<!--    <div class="wrap">-->
-<!--      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eum id laboriosam maiores officiis, omnis quasi quidem rerum sunt veritatis!</p>-->
-<!--    </div>-->
-<!--  </ng-template>-->
+  <p>{{ str | slice:1:-2}}</p>
 
-<!--  <div class="wrap" *appIfnot="!isVisible">-->
-<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eum id laboriosam maiores officiis, omnis quasi quidem rerum sunt veritatis!</p>-->
-<!--  </div>-->
+  <p>
+    {{ date | date: 'MMMM dd, yyyy, HH:mm:ss'}}
+  </p>
 
-  <ng-template [appIfnot]="isVisible">
-    <div class="wrap">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eum id laboriosam maiores officiis, omnis quasi quidem rerum sunt veritatis!</p>
-    </div>
-  </ng-template>
+  <p>
+    {{ float }}
+  </p>
+
+  <p>
+    {{ float | currency }}
+  </p>
+
+  <p>
+    {{ float | percent:'2.0-2'}}
+  </p>
+
+  <pre>{{ obj | json }}</pre>
 </div>
